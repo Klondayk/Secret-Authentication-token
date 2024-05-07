@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  victim:
+    image: php:7.4-apache
+    ports:
+      - 8080:80
+    volumes:
+      - ./victim_src:/var/www/html/
+  attacker:
+    image: php:7.4-apache
+    ports:
+      - 8081:80
+    volumes:
+      - ./attacker_src:/var/www/html/
